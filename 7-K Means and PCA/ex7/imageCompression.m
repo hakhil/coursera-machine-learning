@@ -1,0 +1,1 @@
+A = imread('bird_small.png');img = reshape(A, 128*128, 3);m = size(A, 1);K = 16;centroids = kMeansInitCentroids(img, K);[centroids, idx] = runkMeans(img, centroids, max_iters=10);% Reassign the indexes of the 1-16 labels to the image pixelsfor i = 1:m  A(i, 3) = idx(i);end;A = reshape(A, 128, 128, 3);
